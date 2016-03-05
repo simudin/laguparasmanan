@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>LaPar(Lagu Parasmanan)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@simudin">
+  <meta name="twitter:creator" content="@simudin">
+  <meta name="twitter:title" content="Lagu Parasmanan">
+  <meta name="twitter:url" content="http://simudin.github.io/slides/index.html">
+  <meta name="twitter:description" content="An instant wedding party music for your needs">
+  <meta name="twitter:image:src" content="http://simudin.github.io/assets/hasim.jpg">
+
+  <meta content="1463880640538728" property="fb:app_id">
+  <meta content="simudin" property="og:site_name">
+  <meta content="Lagu Parasmanan" property="og:title">
+  <meta content="article" property="og:type">
+  <meta content="An instant wedding party music for your needs" property="og:description">
+  <meta content="http://simudin.github.io/laguparasmanan/index.html" property="og:url">
+  <meta content="http://simudin.github.io/about/" property="article:author">
+  <meta content="http://simudin.github.io/assets/hasim.jpg" property="og:image">
+  <link rel="stylesheet" href="dist/APlayer.min.css">
+  <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+  <link rel="stylesheet" type="text/css" href="examples.css" />
+  <style>
+    h1{
+      font-size: 5em;
+      font-family: arial,helvetica;
+      color: #fff;
+      margin:0;
+      padding:0;
+    }
+
+    /* Centered texts in each section
+    * --------------------------------------- */
+    .section{
+      text-align:center;
+      overflow: hidden;
+    }
+
+    #myVideo{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top:0;
+      right:0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-color: black; /* in case the video doesn't fit the whole page*/
+        background-image: /* our video */;
+        background-position: center center;
+        background-size: contain;
+        object-fit: cover; /*cover video background */
+        z-index:3;
+    }
+
+
+
+    /* Layer with position absolute in order to have it over the video
+    * --------------------------------------- */
+    #section0 .layer{
+      position: absolute;
+      z-index: 4;
+      width: 100%;
+      left: 0;
+      top: 43%;
+    }
+
+    /*solves problem with overflowing video in Mac with Chrome */
+    #section0{
+      overflow: hidden;
+    }
+
+
+    /* Bottom menu
+    * --------------------------------------- */
+    #infoMenu li a {
+      color: #fff;
+    }
+  </style>
+
+  <!--[if IE]>
+    <script type="text/javascript">
+       var console = { log: function() {} };
+    </script>
+  <![endif]-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+  <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <script type="text/javascript" src="examples.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        verticalCentered: true,
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+        afterRender: function(){
+
+
+          //playing the video
+          $('video').get(0).play();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1463880640538728";
+      fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div id="fullpage">
+    <div class="section " id="section0">
+      <video autoplay loop muted id="myVideo">
+        <source src="flowers.mp4" type="video/mp4">
+        <source src="flowers.webm" type="video/webm">
+      </video>
+      <div class="layer">
+        <h1>LaPar(Lagu Parasmanan)</h1>
+        <div id="player1" class="aplayer"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="simudin">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <div class="fb-share-button" data-href="http://simudin.github.io/parasmanan/index.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="player1" class="aplayer" style="display: none;"></div> -->  
+  <script src="dist/APlayer.min.js"></script>
+  <script>
+      var ap1 = new APlayer({
+        element: document.getElementById('player1'),
+        narrow: false,
+        autoplay: true,
+        showlrc: false,
+        theme: '#e6d0b2',
+        music: {
+            title: 'Sabilulungan',
+            author: 'Mang Koko',
+            url: 'sabilulungan_mang_koko.mp3',
+            pic: 'Mang_koko.jpg'
+        }
+      });
+      ap1.init();
+  </script>
+</body>
+</html>
